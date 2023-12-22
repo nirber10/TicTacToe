@@ -127,10 +127,15 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private void endGame(String tie) {
+    private void endGame(String str) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("More Info");
-        String msg = "This is the message body";
+        builder.setTitle("Winner");
+        String msg = "the Winner is: " + str;
+        if (str.equals("Tie"))
+        {
+            builder.setTitle("Tie");
+            msg = "the Winner is: " + str;
+        }
         builder.setMessage(msg);
         builder.setPositiveButton("EXIT", new DialogInterface.OnClickListener() {
             @Override
